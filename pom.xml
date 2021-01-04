@@ -127,7 +127,6 @@
         <module>openmessaging</module>
         <module>logging</module>
         <module>acl</module>
-        <module>ekfet-test</module>
     </modules>
 
     <build>
@@ -630,4 +629,13 @@
 
         </dependencies>
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>central-repos</id>
+            <name>Central Repository</name>
+            <url>http://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
 </project>
