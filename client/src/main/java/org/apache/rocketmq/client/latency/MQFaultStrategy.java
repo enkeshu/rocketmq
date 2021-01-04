@@ -77,10 +77,8 @@ public class MQFaultStrategy {
                     if (pos < 0)
                         pos = 0;
                     MessageQueue mq = tpInfo.getMessageQueueList().get(pos);
-                    if (latencyFaultTolerance.isAvailable(mq.getBrokerName())) {
-                        if (null == lastBrokerName || mq.getBrokerName().equals(lastBrokerName))
-                            return mq;
-                    }
+                    if (latencyFaultTolerance.isAvailable(mq.getBrokerName()))
+                        return mq;
                 }
                 // 选择一个相对好的broker，并获得其对应的一个消息队列，不考虑该队列的可用性
                 final String notBestBroker = latencyFaultTolerance.pickOneAtLeast();
